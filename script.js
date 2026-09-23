@@ -34,3 +34,35 @@ skillsLink.addEventListener('click', (event) => {
 	});
 });
 
+const projectCarousel = document.querySelector('.project-carousel');
+const previousProject = document.querySelector('.project-arrow-prev');
+const nextProject = document.querySelector('.project-arrow-next');
+const projectCards = [...projectCarousel.querySelectorAll('.project-card')];
+let currentProjectIndex = 0;
+
+const updateProjectArrows = () => {
+	previousProject.disabled = currentProjectIndex === 0;
+	nextProject.disabled = currentProjectIndex === projectCards.length - 1;
+};
+
+const scrollProjects = (direction) => {
+	currentProjectIndex = Math.max(0, Math.min(currentProjectIndex + direction, projectCards.length - 1));
+	const projectCard = projectCards[currentProjectIndex];
+	const projectTrack = document.querySelector('.project-track');
+	const gap = parseFloat(getComputedStyle(projectTrack).gap) || 0;
+	const centeredOffset = (projectCarousel.clientWidth - projectCard.getBoundingClientRect().width) / 2;
+	const maximumScroll = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+	const targetScroll = Math.max(0, Math.min(projectCard.offsetLeft - centeredOffset, maximumScroll));
+
+	projectCarousel.scrollTo({
+		left: targetScroll,
+		behavior: 'smooth',
+	});
+	updateProjectArrows();
+};
+
+previousProject.addEventListener('click', () => scrollProjects(-1));
+nextProject.addEventListener('click', () => scrollProjects(1));
+window.addEventListener('resize', updateProjectArrows);
+updateProjectArrows();
+
