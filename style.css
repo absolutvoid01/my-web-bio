@@ -217,6 +217,13 @@ html {
     color: transparent;
 }
 
+.purple-word {
+    background: linear-gradient(135deg, rgb(138, 44, 181), rgb(136, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .blue-word-solid {
     color:rgb(21, 121, 208)
 }
