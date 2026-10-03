@@ -4,7 +4,7 @@ A clean, minimalist personal biography and digital portfolio website designed to
 
 ## 🚀 Live Demo
 
-The production build of the website is accessible online: [https://github.io](https://github.io)
+The production build of the website is accessible online: [https://absolutvoid01.github.io/my-web-bio/](https://absolutvoid01.github.io/my-web-bio/)
 
 ## ✨ Core Features
 
