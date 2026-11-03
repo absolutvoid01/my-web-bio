@@ -65,4 +65,3 @@ previousProject.addEventListener('click', () => scrollProjects(-1));
 nextProject.addEventListener('click', () => scrollProjects(1));
 window.addEventListener('resize', updateProjectArrows);
 updateProjectArrows();
-
