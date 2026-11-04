@@ -11,6 +11,22 @@ main {
     margin: 0 auto;
 }
 
+/* Page Fade Transition */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        transition: none;
+    }
+}
+
 *,
 *::before,
 *::after {
@@ -346,7 +362,7 @@ button:hover {
         Skill style 
    ===================== */
 
-.skill-button {
+.about-button {
     background: linear-gradient(135deg, rgb(0, 198, 255), rgb(0, 114, 255));
     color: white;
     text-decoration: none;
@@ -366,7 +382,7 @@ button:hover {
     box-sizing: border-box;
 }
 
-.skill-button:hover {
+.about-button:hover {
     filter: brightness(1.10);
     transform: translateY(-3px) scale(1.02);
     background: linear-gradient(135deg, rgb(0, 198, 255), rgb(0, 114, 255));
@@ -973,7 +989,7 @@ button:hover {
 
 .outer-discord-button {
     padding: 25px;
-    background: linear-gradient(80deg, rgb(68, 26, 173), rgb(10, 31, 93), rgb(0, 11, 55));
+    background: linear-gradient(135deg, rgb(66, 7, 149), rgb(31, 7, 149), rgb(0, 45, 149));
     border-radius: 12px;
     text-align: center;
     display: grid;
@@ -1013,7 +1029,7 @@ button:hover {
 
 .outer-spotify-button {
     padding: 25px;
-    background: linear-gradient(80deg, rgb(11, 185, 31), rgb(3, 52, 4), rgb(0, 26, 7));
+    background: linear-gradient(80deg, rgb(4, 97, 15), rgb(3, 52, 4), rgb(0, 26, 7));
     border-radius: 12px;
     text-align: center;
     display: grid;
@@ -1022,10 +1038,11 @@ button:hover {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px; 
     transition: all 0.2s ease;
+    filter: brightness(1.5);
 }
 .outer-spotify-button:hover {
     box-shadow:0 0 32px rgb(0, 45, 2);
-    filter: brightness(1.2);
+    filter: brightness(1.7);
     transform: translateY(-3px);
 }
 .spotify-link {
@@ -1053,7 +1070,7 @@ button:hover {
 
 .outer-server-button {
     padding: 25px;
-    background: linear-gradient(-60deg, rgb(68, 26, 173), rgb(10, 31, 93), rgb(0, 11, 55));
+    background: linear-gradient(275deg, rgb(66, 7, 149), rgb(31, 7, 149), rgb(0, 45, 149));
     border-radius: 12px;
     text-align: center;
     display: grid;
@@ -1085,86 +1102,6 @@ button:hover {
 }
 .server-link:hover {
     background: rgba(31, 31, 31, 0.9);
-    color: white;
-    box-sizing: border-box;
-    transform: none;
-    box-shadow: none;
-}
-
-.outer-capcut-button {
-    padding: 25px;
-    background: linear-gradient(-60deg, rgb(129, 128, 130), rgb(86, 86, 86), rgb(42, 42, 42));
-    border-radius: 12px;
-    text-align: center;
-    display: grid;
-    font-weight: bold;
-    box-sizing: border-box;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;   
-    transition: all 0.2s ease;
-}
-.outer-capcut-button:hover {
-    box-shadow:0 0 32px rgb(54, 54, 54);
-    filter: brightness(1.2);
-    transform: translateY(-3px);
-}
-.capcut-link {
-    padding: 6px 10px;
-    min-height: 28px;
-    margin-top: 3px;
-    font-size: 11px;
-    border-radius: 5px;
-    background: rgba(211, 211, 211, 0.25);
-    color: lightgray;
-    border: none;
-    box-sizing: border-box;
-    transition: background 0.2s ease, color 0.2s ease;
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-}
-.capcut-link:hover {
-    background: rgba(31, 31, 31, 0.9);
-    color: white;
-    box-sizing: border-box;
-    transform: none;
-    box-shadow: none;
-}
-
-.outer-reddit-button {
-    padding: 25px;
-    background: linear-gradient(-210deg, rgb(255, 196, 0), rgb(255, 136, 0), rgb(255, 68, 0));
-    border-radius: 12px;
-    text-align: center;
-    display: grid;
-    font-weight: bold;
-    box-sizing: border-box;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;   
-    transition: all 0.2s ease;
-}
-.outer-reddit-button:hover {
-    box-shadow:0 0 32px rgb(54, 54, 54);
-    filter: brightness(1.2);
-    transform: translateY(-3px);
-}
-.reddit-link {
-    padding: 6px 10px;
-    min-height: 28px;
-    margin-top: 3px;
-    font-size: 11px;
-    border-radius: 5px;
-    background: rgba(211, 211, 211, 0.25);
-    color: lightgray;
-    border: none;
-    box-sizing: border-box;
-    transition: background 0.2s ease, color 0.2s ease;
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-}
-.reddit-link:hover {
-    background: rgba(210, 180, 33, 0.9);
     color: white;
     box-sizing: border-box;
     transform: none;
@@ -1229,7 +1166,7 @@ h4 {
 .AFAZ-Portfolio:hover {
     filter: brightness(1.2);
     transform: translateY(-3px);
-    box-shadow: 0 16px 32px rgba(87, 87, 87, 0.3);
+    box-shadow: 0 16px 32px rgba(53, 53, 53, 0.3);
     border-color: rgba(0, 198, 255, 0.5);
 }
 .go-web {
